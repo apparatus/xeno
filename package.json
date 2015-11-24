@@ -34,6 +34,8 @@
     "commit-check"
   ],
   "devDependencies": {
+    "istanbul": "^0.4.0",
+    "jshint": "^2.8.0",
     "pre-commit": "^1.1.1",
     "tape": "^4.2.0"
   }
