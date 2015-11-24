@@ -15,10 +15,20 @@
       "specific": {
         "path": "/Users/pelger/work/nearform/code/microbial/xeno/xeno/test/fixture/system1/./frontend/",
         "type": "process",
-        "proxyPort": "3000",
-        "servicePort": "auto",
+        "proxyPort": [
+          "auto"
+        ],
+        "servicePort": [
+          "auto"
+        ],
+        "buildScript": "npm set registry http://192.168.3.12:4873; npm install --ignore-scripts; ",
         "execute": {
           "exec": "node frontend.js",
+          "environment": {
+            "PROXY_PORT": "3000",
+            "SERVICE_HOST": "0.0.0.0",
+            "SERVICE_PORT": "3001"
+          },
           "process": "node frontend.js"
         }
       },
@@ -30,10 +40,16 @@
       "specific": {
         "path": "/Users/pelger/work/nearform/code/microbial/xeno/xeno/test/fixture/system1/./service1/",
         "type": "process",
-        "proxyPort": "auto",
-        "servicePort": "auto",
+        "proxyPort": [
+          "auto"
+        ],
+        "servicePort": [
+          "auto"
+        ],
+        "buildScript": "npm set registry http://192.168.3.12:4873; npm install --ignore-scripts; ",
         "execute": {
           "exec": "node service.js",
+          "environment": [],
           "process": "node service.js"
         }
       },
@@ -45,10 +61,16 @@
       "specific": {
         "path": "/Users/pelger/work/nearform/code/microbial/xeno/xeno/test/fixture/system1/./service2/",
         "type": "process",
-        "proxyPort": "auto",
-        "servicePort": "auto",
+        "proxyPort": [
+          "auto"
+        ],
+        "servicePort": [
+          "auto"
+        ],
+        "buildScript": "echo NO BUILD SCRIPT!",
         "execute": {
           "exec": "",
+          "environment": [],
           "process": ""
         }
       },
@@ -88,9 +110,10 @@
           "type": "blank-container",
           "environment": {
             "PROXY_HOST": "__TARGETIP__",
-            "frontend_PORT": "3000",
-            "service1_PORT": 10000,
-            "service2_PORT": 10001
+            "SERVICE_HOST": "0.0.0.0",
+            "frontend_PORT": 10000,
+            "service1_PORT": 10001,
+            "service2_PORT": 10002
           }
         }
       },
@@ -104,18 +127,24 @@
         "specific": {
           "path": "/Users/pelger/work/nearform/code/microbial/xeno/xeno/test/fixture/system1/./frontend/",
           "type": "process",
-          "proxyPort": "3000",
+          "proxyPort": 10000,
           "servicePort": 20000,
+          "buildScript": "npm set registry http://192.168.3.12:4873; npm install --ignore-scripts; ",
           "execute": {
             "exec": "node frontend.js",
+            "environment": {
+              "PROXY_PORT": "3000",
+              "SERVICE_HOST": "0.0.0.0",
+              "SERVICE_PORT": "3001"
+            },
             "process": "node frontend.js"
           },
           "environment": {
             "PROXY_HOST": "__TARGETIP__",
-            "frontend_PORT": "3000",
-            "service1_PORT": 10000,
-            "service2_PORT": 10001,
             "SERVICE_HOST": "0.0.0.0",
+            "frontend_PORT": 10000,
+            "service1_PORT": 10001,
+            "service2_PORT": 10002,
             "SERVICE_PORT": 20000
           }
         }
@@ -130,18 +159,20 @@
         "specific": {
           "path": "/Users/pelger/work/nearform/code/microbial/xeno/xeno/test/fixture/system1/./service1/",
           "type": "process",
-          "proxyPort": 10000,
+          "proxyPort": 10001,
           "servicePort": 20001,
+          "buildScript": "npm set registry http://192.168.3.12:4873; npm install --ignore-scripts; ",
           "execute": {
             "exec": "node service.js",
+            "environment": [],
             "process": "node service.js"
           },
           "environment": {
             "PROXY_HOST": "__TARGETIP__",
-            "frontend_PORT": "3000",
-            "service1_PORT": 10000,
-            "service2_PORT": 10001,
             "SERVICE_HOST": "0.0.0.0",
+            "frontend_PORT": 10000,
+            "service1_PORT": 10001,
+            "service2_PORT": 10002,
             "SERVICE_PORT": 20001
           }
         }
@@ -156,18 +187,20 @@
         "specific": {
           "path": "/Users/pelger/work/nearform/code/microbial/xeno/xeno/test/fixture/system1/./service2/",
           "type": "process",
-          "proxyPort": 10001,
+          "proxyPort": 10002,
           "servicePort": 20002,
+          "buildScript": "echo NO BUILD SCRIPT!",
           "execute": {
             "exec": "",
+            "environment": [],
             "process": ""
           },
           "environment": {
             "PROXY_HOST": "__TARGETIP__",
-            "frontend_PORT": "3000",
-            "service1_PORT": 10000,
-            "service2_PORT": 10001,
             "SERVICE_HOST": "0.0.0.0",
+            "frontend_PORT": 10000,
+            "service1_PORT": 10001,
+            "service2_PORT": 10002,
             "SERVICE_PORT": 20002
           }
         }
@@ -188,9 +221,10 @@
           },
           "environment": {
             "PROXY_HOST": "__TARGETIP__",
-            "frontend_PORT": "3000",
-            "service1_PORT": 10000,
-            "service2_PORT": 10001
+            "SERVICE_HOST": "0.0.0.0",
+            "frontend_PORT": 10000,
+            "service1_PORT": 10001,
+            "service2_PORT": 10002
           }
         }
       }

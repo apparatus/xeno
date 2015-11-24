@@ -5,7 +5,7 @@
     "compile",
     "compose"
   ],
-  "version": "0.1.2",
+  "version": "0.2.0",
   "license": "MIT",
   "author": "Peter Elger (http://nearform.com/)",
   "contributors": [
@@ -16,8 +16,8 @@
     "node": "*"
   },
   "dependencies": {
-    "xeno-compiler": "^0.1.0",
-    "xeno-compose": "^0.1.0"
+    "xeno-compiler": "^0.2.0",
+    "xeno-compose": "^0.2.0"
   },
   "repository": {
     "type": "git",
