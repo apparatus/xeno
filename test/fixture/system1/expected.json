@@ -145,6 +145,7 @@
             "frontend_PORT": 10000,
             "service1_PORT": 10001,
             "service2_PORT": 10002,
+            "PROXY_PORT": "3000",
             "SERVICE_PORT": 20000
           }
         }
