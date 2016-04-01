@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "xeno-compiler": "^0.4.0",
-    "xeno-compose": "^0.4.0"
+    "xeno-compose": "^0.4.5"
   },
   "repository": {
     "type": "git",
